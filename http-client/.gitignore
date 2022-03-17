@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -25,6 +26,8 @@ hs_err_pid*
 # Maven
 log/
 target/
+!**/src/main/**/target/
+!**/src/test/**/target/
 
 # Inclusions
 !lib/**
@@ -35,3 +38,35 @@ bin/
 build/
 /bin1/
 java/build/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+
+#### Others #####
+HELP.md
