@@ -1,1 +1,6 @@
-{"identity":{"color":"black","name":"hulk","weight":11.5},"breed":{"name":"german shepherd"}}
+{
+  "nome" : "Gilson",
+  "cidade" : {
+    "nome_cidade" : "São Paulo"
+  }
+}
