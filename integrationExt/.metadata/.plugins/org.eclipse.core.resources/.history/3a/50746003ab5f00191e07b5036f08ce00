@@ -1,0 +1,32 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+<<<<<<< HEAD
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
+=======
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+>>>>>>> d93b7410c0adb3210fd5d83a174ef29e8440be00
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class PaymentAuthenticationApi {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@JsonIgnore
+	private Long id;
+	
+	@JsonProperty("type")
+	private String type;
+	
+	@JsonProperty("threed_secure")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private ThreeDSecureApi threedSecure;
+	
+}

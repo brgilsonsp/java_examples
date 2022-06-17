@@ -1,0 +1,5 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+public class CheckoutCardInstallmentOptionApi {
+
+}

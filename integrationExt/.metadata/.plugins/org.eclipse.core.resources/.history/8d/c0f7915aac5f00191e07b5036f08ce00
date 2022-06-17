@@ -1,0 +1,67 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class CheckoutPaymentApi {
+
+	@JsonProperty("accepted_payment_methods")
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private List<String> acceptedPaymentMethods;
+	
+	@JsonProperty("accepted_multi_payment_methods")
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private List<Object> acceptedMultiPaymentMethods;
+    
+    @JsonProperty("success_url")
+    private String successUrl;
+    
+    @JsonProperty("default_payment_method")
+    private String defaultPaymentMethod;
+    
+    @JsonProperty("gateway_affiliation_id")
+    private String gatewayAffiliationId;
+    
+    @JsonProperty("credit_card")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private CheckoutCreditCardPaymentApi creditCard;
+    
+    @JsonProperty("debit_card")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private CheckoutDebitCardPaymentApi debitCard;
+ 
+    @JsonProperty("boleto")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private CheckoutBoletoPaymentApi boleto;
+    
+    @JsonProperty("customer_editable")
+    private Boolean customerEditable;
+    
+    @JsonProperty("expires_in")
+    private Integer expiresIn;
+    
+    @JsonProperty("skip_checkout_success_page")
+    private boolean skipCheckoutSuccessPage;
+    
+    @JsonProperty("billing_address_editable")
+    private boolean billingAddressEditable;
+    
+    @JsonProperty("billing_address")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private AddressApi billingAddress;
+    
+    @JsonProperty("bank_transfer")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private CheckoutBankTransferApi bankTransfer;
+    
+    
+	
+}

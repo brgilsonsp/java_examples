@@ -1,0 +1,128 @@
+{
+	"id_vanrooy": "875s87r_sdsdere",
+	"order_detail": {
+		"customer": {
+			"name": "Name customer",
+			"email": "email@customer.com",
+			"phone": {
+				"home_phone": {
+					"country_code": "55",
+					"area_code": "11",
+					"number": "111111111"
+				},
+				"mobile_phone": {
+					"country_code": "55",
+					"area_code": "11",
+					"number": "111111111"
+				}
+			},
+			"document": "11111111111",
+			"type": "individual",
+			"gender": "female",
+			"address": {
+				"line_1": "11, Rua Nome Da Rua, Nome do Bairro",
+				"line_2": "complemento do endereço, ponto de referência, etc",
+				"zip_code": "11111111",
+				"city": "Sao Paulo",
+				"state": "SP",
+				"country": "BR",
+				"metadata": {
+					"chave_01": "Valor 01",
+					"cahve_02": "Valor 02",
+					"chave_N": "Valor N"
+				}
+			},
+			"code": "vanrooy_code_customer",
+			"birthdate": "20/05/2001",
+			"metadata": {
+				"chave_01": "Valor 01",
+				"cahve_02": "Valor 02",
+				"chave_N": "Valor N"
+			}
+		},
+		"items": [
+			{
+				"amount": 25368,
+				"description": "Descrição do item01",
+				"quantity": 2,
+				"code": "codigo_item01_vanrooy",
+				"category": "categoria item01 vanrooy"
+			},
+			{
+				"amount": 4856,
+				"description": "Descrição do item02",
+				"quantity": 1,
+				"code": "codigo_item02_vanrooy",
+				"category": "categoria item02 vanrooy"
+			}
+		],
+		"shipping": {
+			"amount": 6530,
+			"description": "Descrição da entrega",
+			"recipient_name": "Nome do receptor do pedido",
+			"recipient_phone": "11 111111111",
+			"address": {
+				"line_1": "11, Rua Nome Da Rua, Nome do Bairro",
+				"line_2": "complemento do endereço, ponto de referência, etc",
+				"zip_code": "11111111",
+				"city": "Sao Paulo",
+				"state": "SP",
+				"country": "BR",
+				"metadata": {
+					"chave_01": "Valor 01",
+					"cahve_02": "Valor 02",
+					"chave_N": "Valor N"
+				}
+			},
+			"max_delivery_date": "20/06/2019",
+			"estimated_delivery_date": "18/06/2019",
+			"type": "Correios"
+		},
+		"metadata": {
+			"chave_01": "Valor 01",
+			"cahve_02": "Valor 02",
+			"chave_N": "Valor N"
+		},
+		"antifraud_enabled": true,
+		"antifraud": {
+			"type": "clearsale",
+			"clearsale": {
+				"custom_sla": 10
+			}
+		},
+		"currency" : "BRL"
+	},
+	"payments": [
+		{
+			"credit_card": {
+				"installments": 1,
+				"statement_descriptor": "Onofre Site",
+				"card": {
+					"holder_name": "Nome Titular Cartão",
+					"billing_address": {
+						"line_1": "11, Rua Nome Da Rua, Nome do Bairro",
+						"line_2": "complemento do endereço, ponto de referência, etc",
+						"zip_code": "11111111",
+						"city": "Sao Paulo",
+						"state": "SP",
+						"country": "BR",
+						"metadata": {
+							"chave_01": "Valor 01",
+							"cahve_02": "Valor 02",
+							"chave_N": "Valor N"
+						}
+					}
+				},
+				"capture": false
+			},
+			"metadata": {
+				"chave_01": "Valor 01",
+				"cahve_02": "Valor 02",
+				"chave_N": "Valor N"
+			}
+		}
+	],
+	"token_mund": {
+		"token": "token_mundi_pagg"
+	}
+}

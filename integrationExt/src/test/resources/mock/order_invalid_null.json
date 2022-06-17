@@ -1,0 +1,23 @@
+{
+	"id_vanrooy": "",
+	"order_detail": {
+		
+	},
+	"payments": [
+		{
+			"credit_card": {
+				"installments": 1,
+				"statement_descriptor": "Onofre Site",
+				"capture": false
+			},
+			"metadata": {
+				"chave_01": "Valor 01",
+				"cahve_02": "Valor 02",
+				"chave_N": "Valor N"
+			}
+		}
+	],
+	"token_mund": {
+		"token": "token_mundi_pagg"
+	}
+}

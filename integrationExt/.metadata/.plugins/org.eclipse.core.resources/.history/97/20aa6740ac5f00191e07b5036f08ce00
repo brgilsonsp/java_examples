@@ -1,0 +1,23 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class CheckoutBankTransferApi {
+
+	@JsonProperty("bank")
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private List<String> bank;
+		
+	@JsonProperty("retries")
+	private int retries;
+	 
+	
+}

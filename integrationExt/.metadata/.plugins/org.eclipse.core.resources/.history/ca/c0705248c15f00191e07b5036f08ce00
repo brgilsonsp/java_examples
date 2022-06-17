@@ -1,0 +1,29 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.joda.time.DateTime;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class CheckoutBoletoPaymentApi {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@JsonIgnore
+	private Long id;
+	
+	@JsonProperty("bank")
+	private String bank;
+	
+	@JsonProperty("instructions")
+	private String instructions;
+    
+	@JsonProperty("due_at")
+	private DateTime dueAt;
+}

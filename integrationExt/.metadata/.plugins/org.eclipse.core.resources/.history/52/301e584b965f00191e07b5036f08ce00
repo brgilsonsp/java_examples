@@ -1,0 +1,13 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class CashPaymentApi {
+
+	private String description;
+	
+	
+    private boolean confirm;
+	
+}

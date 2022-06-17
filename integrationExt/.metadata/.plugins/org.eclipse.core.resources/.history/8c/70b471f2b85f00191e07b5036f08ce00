@@ -1,0 +1,127 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import java.util.LinkedHashMap;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mundipagg.api.models.CreateAddressRequest;
+
+@Entity
+public class AddressApi {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@JsonIgnore
+	private Long id;
+	
+	@JsonProperty(required=true, value="street")
+	private String street;
+	
+	@JsonProperty(required=true, value="number")
+	private String number;
+	
+	@JsonProperty(required=true, value="zip_code")
+	private String zipCode;
+	
+	@JsonProperty(value="neighborhood")
+	private String neighborhood;
+	
+	@JsonProperty(value="city")
+	private String city;
+	
+	@JsonProperty(required=true, value="state")
+	private String state;
+	
+	@JsonProperty(value="country")
+	private String country;
+	
+	@JsonProperty(value="complement")
+	private String complement;
+	
+	@JsonProperty(value="metadata")
+	@Transient
+	private LinkedHashMap<String, String> metadata;
+	
+	@JsonProperty(value="line_1")
+	private String line1;
+	
+	@JsonProperty(value="line_2")
+	private String line2;
+
+	@Override
+	public String toString() {
+		return "AddressApi [id=" + id + ", city=" + city + ", country=" + country + ", houseNumberOrName="
+				+ number + ", postalCode=" + zipCode + ", stateOrProvince=" + state
+				+ ", street=" + street + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((city == null) ? 0 : city.hashCode());
+		result = prime * result + ((country == null) ? 0 : country.hashCode());
+		result = prime * result + ((number == null) ? 0 : number.hashCode());
+		result = prime * result + ((street == null) ? 0 : street.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AddressApi other = (AddressApi) obj;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
+		if (country == null) {
+			if (other.country != null)
+				return false;
+		} else if (!country.equals(other.country))
+			return false;
+		if (number == null) {
+			if (other.number != null)
+				return false;
+		} else if (!number.equals(other.number))
+			return false;
+		if (street == null) {
+			if (other.street != null)
+				return false;
+		} else if (!street.equals(other.street))
+			return false;
+		return true;
+	}
+	
+	public CreateAddressRequest build() {
+		
+		CreateAddressRequest addressApi = new CreateAddressRequest();
+		
+		addressApi.setCity(this.city);
+		addressApi.setComplement(this.complement);
+		addressApi.setCountry(this.country);
+		addressApi.setLine1(this.line1);
+		addressApi.setLine2(this.line2);
+		addressApi.setMetadata(this.metadata);
+		addressApi.setNeighborhood(this.neighborhood);
+		addressApi.setNumber(this.number);
+		addressApi.setState(this.state);
+		addressApi.setStreet(this.street);
+		addressApi.setZipCode(this.zipCode);
+		
+		return addressApi;
+	}
+}

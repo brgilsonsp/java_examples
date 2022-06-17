@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\willian.jose\Documents\Onofre\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2134818915.index
+607942671.index
+3820408749.index
+246452335.index
+1407836419.index
+3218437161.index

@@ -1,0 +1,49 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import org.joda.time.DateTime;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class BoletoPaymentApi {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@JsonIgnore
+	private Long id;
+	
+	@JsonProperty("retries")
+	private int retries;
+	
+	@JsonProperty("bank")
+	private String bank;
+	
+	@JsonProperty("instructions")
+	private String instructions;
+	
+	@JsonProperty("due_at")
+	private DateTime dueAt;
+	
+	@JsonProperty("billing_address")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private AddressApi billingAddress;
+	
+	@JsonProperty("billing_address_id")
+	private String billingAddressId;
+	
+	@JsonProperty("nosso_numero")
+	private String nossoNumero;
+	
+	@JsonProperty("document_number")
+	private String documentNumber;
+	
+}

@@ -1,0 +1,20 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import javax.persistence.Entity;
+
+import org.joda.time.DateTime;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class CheckoutBoletoPaymentApi {
+
+	@JsonProperty("bank")
+	private String bank;
+	
+	@JsonProperty("instructions")
+	private String instructions;
+    
+	@JsonProperty("due_at")
+	private DateTime dueAt;
+}

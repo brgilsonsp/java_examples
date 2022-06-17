@@ -1,0 +1,22 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import java.util.List;
+
+public class CheckoutPaymentApi {
+
+	private List<String> acceptedPaymentMethods;
+    private List<Object> acceptedMultiPaymentMethods;
+    private String successUrl;
+    private String defaultPaymentMethod;
+    private String gatewayAffiliationId;
+    private CreateCheckoutCreditCardPaymentRequest creditCard;
+    private CreateCheckoutDebitCardPaymentRequest debitCard;
+    private CreateCheckoutBoletoPaymentRequest boleto;
+    private Boolean customerEditable;
+    private Integer expiresIn;
+    private boolean skipCheckoutSuccessPage;
+    private boolean billingAddressEditable;
+    private CreateAddressRequest billingAddress;
+    private CreateCheckoutBankTransferRequest bankTransfer;
+	
+}

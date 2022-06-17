@@ -1,0 +1,64 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class CreditCardPaymentApi {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@JsonIgnore
+	private Long id;
+	
+	@JsonProperty("installments")
+	private Integer installments = 1;
+    
+    @JsonProperty("statement_descriptor")
+    private String statementDescriptor;
+    
+    @JsonProperty("card")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private CardApi card;
+    
+    @JsonProperty("card_id")
+    private String cardId;
+    
+    @JsonProperty("card_token")
+    private String cardToken;
+    
+    @JsonProperty("recurrence")
+    private Boolean recurrence;
+    
+    @JsonProperty("capture")
+    private Boolean capture = true;
+    
+    @JsonProperty("extended_limit_enabled")
+    private Boolean extendedLimitEnabled;
+    
+    @JsonProperty("extended_limit_code")
+    private String extendedLimitCode;
+    
+    @JsonProperty("merchant_category_code")
+    private Long merchantCategoryCode;
+    
+    @JsonProperty("authentication")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private PaymentAuthenticationApi authentication;
+    
+    @JsonProperty("token")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private CardPaymentTokenApi token;
+    
+    @JsonProperty("auto_recovery")
+    private Boolean autoRecovery;
+	
+}

@@ -1,0 +1,67 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import java.util.LinkedHashMap;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class CardApi {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@JsonIgnore
+	private Long id;
+	
+	@JsonProperty("number")
+	private String number;
+	
+	@JsonProperty("holder_name")
+    private String holderName;
+    
+	@JsonProperty("exp_month")
+	private int expMonth;
+
+	@JsonProperty("exp_year")
+	private int expYear;
+    
+	@JsonProperty("cvv")
+	private String cvv;
+    
+    @JsonProperty("billing_address")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private AddressApi billingAddress;
+    
+    @JsonProperty("brand")
+    private String brand;
+    
+    @JsonProperty("billing_address_id")
+    private String billingAddressId;
+    
+    @Transient
+    @JsonProperty(value="metadata")
+    private LinkedHashMap<String, String> metadata;
+    
+    @JsonProperty("type")
+    private String type = "credit";
+    
+    @JsonProperty("options")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private CardOptionsApi options;
+    
+    @JsonProperty("holder_document")
+    private String holderDocument;
+    
+    @JsonProperty("private_label")
+    private boolean privateLabel;
+	
+}

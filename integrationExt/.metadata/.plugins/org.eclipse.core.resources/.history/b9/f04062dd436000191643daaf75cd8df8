@@ -1,0 +1,31 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+@Entity
+public class CheckoutDebitCardPaymentApi {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@JsonIgnore
+	private Long id;
+	
+	 @JsonProperty("statement_descriptor")
+	 private String statementDescriptor;
+	 
+	 @JsonProperty("authentication")
+	 @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	 private PaymentAuthenticationApi authentication;
+	    
+	
+}

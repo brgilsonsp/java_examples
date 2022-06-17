@@ -1,0 +1,16 @@
+package gp.betta.mundipagg.onofre.mundipaggPayment.entity;
+
+import javax.persistence.Entity;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class PaymentAuthenticationApi {
+
+	@JsonProperty("type")
+	private String type;
+	
+	@JsonProperty("threed_secure")
+    private ThreeDSecureApi threedSecure;
+	
+}
