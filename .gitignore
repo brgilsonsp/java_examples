@@ -26,3 +26,5 @@ vscode/
 workspace/
 
 .gitignore.bak
+
+.idea
