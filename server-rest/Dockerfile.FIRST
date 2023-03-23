@@ -1,0 +1,25 @@
+#FROM eclipse-temurin:17-jdk-jammy
+FROM openjdk:11
+
+# Configuration directory to work
+WORKDIR /app
+
+# Copy script SpringBoot
+COPY .mvn/ .mvn
+COPY mvnw ./
+
+# Copy pom.xml for project
+COPY pom.xml ./
+
+#install dos2unix to normalize script mvnw, and remove dos2unix
+RUN apt-get update && apt-get install -y dos2unix
+RUN dos2unix ./mvnw
+RUN apt-get remove -y dos2unix
+
+# Resolve dependencies
+RUN ./mvnw dependency:resolve
+
+# Copy source font
+COPY src src
+
+CMD ["./mvnw", "spring-boot:run"]
