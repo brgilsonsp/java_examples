@@ -44,8 +44,8 @@ public class ServerFreeController {
 	@GetMapping("/test")
 	public Map<String, Object> getAnyBody(){
 		Map<String, Object> response = new HashMap<>();
-		response.put("field_one", "value_one");
-		response.put("field_two", "value_two)");
+		response.put("field_one", "value_one_one");
+		response.put("field_two", "value_two");
 
 		return response;
 	}

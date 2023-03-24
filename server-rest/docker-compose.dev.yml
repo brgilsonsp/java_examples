@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  server-rest-dev:
+    container_name: server-rest-dev
+    build:
+      context: .
+      target: development
+    ports:
+    - "5005:5005"
+    - ${PORT_APP_DEV}:8080
